@@ -7,10 +7,21 @@
 """
 
 def main():
-    pass
+    # Get method type.
+    method = input().lower()
+
+    # Get the number of monarchs.
+    size = int(input())
+
+    for _ in range(size):
+        pass
+
+
 
 def roman_to_decimal():
     pass
+
+
 
 if __name__ == "__main__":
     main()
