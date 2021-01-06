@@ -10,13 +10,21 @@ def main():
     # Get method type.
     method = input().lower()
 
+    # Error handling for method type.
+    if method not in ["a", "b"]:
+        print("ERROR: Incorrect option")
+        exit()
+
     # Get the number of monarchs.
     size = int(input())
 
+    # Get the list of monarchs.
+    monarchs = list()
     for _ in range(size):
-        pass
+        monarchs.append(input())
 
-
+    # Test code.
+    print(method, size, monarchs)
 
 def roman_to_decimal():
     pass
