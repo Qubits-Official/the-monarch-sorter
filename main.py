@@ -6,6 +6,9 @@
     5) Print the results.
 """
 
+from datetime import date
+
+
 def main():
     # Get method type.
     method = input().lower()
@@ -58,6 +61,12 @@ def roman_to_int(roman):
     else:
         print("(2) input is not a valid Roman numeral")
 
+def sort_by_name(monarchs):
+    pass
+
+def sort_by_date(monarchs):
+    pass
+
 # Utility Function/s
 def roman_checker(decimal):
     """ Converts a decimal value into a roman numeral. """
@@ -89,6 +98,52 @@ def roman_checker(decimal):
         decimal -= dec_const[index] * multiplier
         
     return ''.join(rom_build)    # Transform the rom_build to string.
+
+def parse_monarchs(monarchs):
+    first_names = list()
+    rom_num = list()
+    dates = list()
+
+    for monarch in monarchs:
+        first_space = monarch.find(" ")
+        second_space = monarch.find(" ", first_space+1)
+        third_space = monarch.find(" ", second_space+1)
+        comma_pos = monarch.find(",")
+
+        first_names.append(monarch[:monarch.find(" ")])
+        dates.append(monarch[comma_pos+1:])
+     
+    return dates
+
+def to_dec_date(rom_dates):
+    """ Convert the roman numerical date to decimal date. """
+
+    dec_dates = list()
+    for rom_date in rom_dates:
+        first_dot = rom_date.find(".")
+        second_dot = rom_date.find(".", first_dot+1)
+
+        day = roman_to_int(rom_date[:first_dot])
+        month = roman_to_int(rom_date[first_dot+1:second_dot])
+        year = roman_to_int(rom_date[second_dot+1:])
+
+        dec_dates.append()
+
+    return dec_dates
+
+def to_date_obj(dec_dates):
+    """ Convert the decimal date into a date object. """
+
+    date_objs = list()
+    for date_obj in dec_dates:
+        try:
+            pass
+        except:
+            pass
+        else:
+            pass
+    
+    return date_objs
 
 
 if __name__ == "__main__":
